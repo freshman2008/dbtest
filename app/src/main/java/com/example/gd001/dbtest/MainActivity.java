@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     //查询数据库，将每一行的数据封装成一个person 对象，然后将对象添加到List中
     private List<Person> queryData() {
-        List<Person> list = new ArrayList<Person>();
+        personList.clear();
         dbHelper = new DBHelper(this);
 
         //调用query()获取Cursor
@@ -105,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
             p.setAge(age);
             p.setSex(sex);
 
-            list.add(p);
+            personList.add(p);
         }
-        return list;
+        return personList;
     }
 
     public void updateUI() {
